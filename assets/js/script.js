@@ -22,27 +22,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogForm = document.getElementById('blogForm');
 
     blogForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Prevent the default form submission behavior
 
         // Retrieve values from form inputs
         const username = document.getElementById('username').value;
-        const blogTitle = document.getElementById('blogTitle').value;
-        const blogContent = document.getElementById('blogContent').value;
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
 
-        // Create an object with blog post data
-        const blogPost = {
-            username: username,
-            title: blogTitle,
-            content: blogContent
+        // Validate input fields
+        if (!username.trim() || !title.trim() || !content.trim()) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Create an object for the new blog post
+        const newBlogPost = {
+            author: username,
+            title: title,
+            content: content
         };
 
-        // Convert the object to a JSON string
-        const blogPostString = JSON.stringify(blogPost);
+        // Retrieve the current array of blog posts from localStorage, or initialize a new array if none exists
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 
-        // Store the JSON string in localStorage
-        localStorage.setItem('blogPost', blogPostString);
+        // Add the new blog post to the array
+        blogPosts.push(newBlogPost);
 
-        // Redirect to the posts page after storing the data
-        window.location.href = 'posts.html'; // Update 'posts.html' with the actual file name of your posts page
+        // Save the updated array back to localStorage
+        localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+
+        // Redirect to the posts page
+        window.location.href = 'posts.html';
     });
 });

@@ -1,3 +1,6 @@
+const toggleButton = document.getElementById('toggle-theme');
+const backButton = document.getElementById('back-button');
+
 // Function to display blog posts from localStorage
 function displayBlogPosts() {
     const postsContainer = document.getElementById('posts-container');
