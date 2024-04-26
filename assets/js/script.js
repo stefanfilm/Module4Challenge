@@ -55,3 +55,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'posts.html';
     });
 });
+
+let isDarkMode = false;
+
+document.getElementById('toggleMode').addEventListener('click', function() {
+    const body = document.body;
+    isDarkMode = !isDarkMode;
+
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+});

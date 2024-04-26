@@ -1,3 +1,17 @@
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
 body {
     background-color: #f0f0f0; /* Light mode background color */
     color: #333; /* Light mode text color */
@@ -6,4 +20,20 @@ body {
 .dark-mode {
     background-color: #333; /* Dark mode background color */
     color: #f0f0f0; /* Dark mode text color */
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Add any background color you want */
+    padding: 10px;
+    z-index: 1000; /* Ensure it is above other elements */
+    color: #333
+}
+
+/* Add margin to the content to prevent it from being covered by the fixed header */
+body {
+    margin-top: 150px; /* Adjust this value based on the height of your fixed header */
 }

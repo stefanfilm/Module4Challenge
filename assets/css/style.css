@@ -48,3 +48,25 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+
+/* Default styles */
+body {
+    color: #333; /* Default text color */
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333;
+    color: #333; /* Text color in dark mode */
+}
+
+#toggleMode {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #000000; /* Add any background color you want */
+    z-index: 1000; /* Ensure it is above other elements */
+}
